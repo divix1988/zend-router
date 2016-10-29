@@ -151,9 +151,9 @@ route.
 
 ## HTTP Route Types
 
-zend-mvc ships with the following HTTP route types.
+zend-router ships with the following HTTP route types.
 
-### Zend\\Mvc\\Router\\Http\\Hostname
+### Zend\\Router\\Http\\Hostname
 
 The `Hostname` route attempts to match the hostname registered in the request
 against specific criteria. Typically, this will be in one of the following
@@ -198,7 +198,7 @@ $route = Hostname::factory([
 When matched, the above will return two keys in the `RouteMatch`, "subdomain"
 and "type".
 
-### Zend\\Mvc\\Router\\Http\\Literal
+### Zend\\Router\\Http\\Literal
 
 The `Literal` route is for doing exact matching of the URI path. Configuration
 therefore is solely the path you want to match, and the "defaults", or
@@ -217,7 +217,7 @@ $route = Literal::factory([
 The above route would match a path "/foo", and return the key "action" in the
 `RouteMatch`, with the value "foo".
 
-### Zend\\Mvc\\Router\\Http\\Method
+### Zend\\Router\\Http\\Method
 
 The `Method` route is used to match the HTTP method or 'verb' specified in the
 request (See RFC 2616 Sec. 5.1.1). It can optionally be configured to match
@@ -236,7 +236,7 @@ $route = Method::factory([
 The above route would match an http "POST" or "PUT" request and return a
 `RouteMatch` object containing a key "action" with a value of "form-submit".
 
-### Zend\\Mvc\\Router\\Http\\Part
+### Zend\\Router\\Http\\Part
 
 A `Part` route allows crafting a tree of possible routes based on segments of
 the URI path. It actually extends the `TreeRouteStack`.
